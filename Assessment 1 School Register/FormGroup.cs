@@ -6,17 +6,18 @@ namespace Assessment_1_School_Register
 {
     class FormGroup
     {
-        private string formName;
-        private string teacherName;
-        private Student[] Students;
+        private static int maxStudents = 25;
+        private string FormName;
+        private string TeacherName;
+        private Student[] Students = new Student[maxStudents];
 
-        public FormGroup(string formName, string teacherName)
+        public FormGroup(string FormName, string TeacherName)
         {
-            string FormName = formName;
-            string TeacherName = teacherName;
-            Students = new Student[25];
+            this.FormName = FormName;
+            this.TeacherName = TeacherName;
 
         }
 
+        
     }
 }
