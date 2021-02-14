@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Assessment_1_School_Register
+{
     class Student
     {
         private string StudentName;
         private DateTime StudentDoB;
         private char StudentGender;
         private Attendance[] Attendances = new Attendance[180];
+        private int attendanceCount = 0;
          
             
         public Student(string StudentName, DateTime StudentDoB, char StudentGender )
@@ -21,10 +23,8 @@ namespace Assessment_1_School_Register
 
         public void AddAttendance( DateTime Date, bool Present, int MinutesLate) // this is right already btw 
         {
-            //create a new attendance obj here, i forgot how to do looooooooool
-            Attendance attendance = 
-            Attendances[180] = attendance;
-
+            Attendances[attendanceCount] = new Attendance(Date, Present, MinutesLate);
+            attendanceCount++;
         }
 
         public int CalculateTotalPresent() 
@@ -56,7 +56,7 @@ namespace Assessment_1_School_Register
         }
 
        
-        public int CalculateTotalLate()
+        public int CalculateTotalLateDays()
         {
             int totalLt = 0;
 
@@ -64,13 +64,16 @@ namespace Assessment_1_School_Register
             {
                 if (Attendances[i] != null && (Attendances[i].GetMinsLate() != 0))
                 {
-                    totalLt = totalLt + Attendances[i].GetMinsLate();
+                    totalLt++;
                 }
             }
             return totalLt;
         }
+        
+        //public int CalculateTotalLateMins()
+        //{
 
-
+       // }
         
     }
 }
