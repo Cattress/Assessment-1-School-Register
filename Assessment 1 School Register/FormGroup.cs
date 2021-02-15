@@ -36,9 +36,17 @@ namespace Assessment_1_School_Register
                 {
                     Console.WriteLine("Is student ", Students[i], " present?");
                     attendanceInput = Console.ReadLine();
-                    Students[i] = attendanceInput;
+                    //Students[i] = attendanceInput;
 
                 }
+            }
+        }
+
+        public void ShowAttendance(Student[] students)
+        {
+            for(int i = 0; i < maxStudents; i++)
+            {
+                Console.WriteLine(students[i]);
             }
         }
 

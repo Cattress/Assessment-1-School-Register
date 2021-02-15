@@ -14,10 +14,11 @@ namespace Assessment_1_School_Register
 
             y12FB.AddStudent("Toy", DateTime.Parse("01/02/2004"), 'C');
 
+            Menu(*);
            
         }
 
-        static void ProgramRepeat()
+        static void Menu(Student[] students, Attendance[] attendances )
         {
             bool UserContinue = true;
 
@@ -32,11 +33,22 @@ namespace Assessment_1_School_Register
 
                 string userInput =  Console.ReadLine();
                 int userInputNumber = Convert.ToInt32(userInput);
-                if (userInputNumber == 1)
+                if (userInputNumber == 0)
+                {
+                    UserContinue = false;
+                }
+                else if (userInputNumber == 1)
+                {
+                    FormGroup.TakeAttendance();
+                }
+                else if (userInputNumber == 2)
                 {
 
                 }
+                else if (userInputNumber == 3)
+                {
 
+                }
             }
         }
     }
