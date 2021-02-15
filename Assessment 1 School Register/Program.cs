@@ -34,6 +34,7 @@ namespace Assessment_1_School_Register
 
                 string userInput =  Console.ReadLine();
                 int userInputNumber = Convert.ToInt32(userInput);
+
                 if (userInputNumber == 0)
                 {
                     UserContinue = false;
@@ -42,15 +43,32 @@ namespace Assessment_1_School_Register
                 {
                     form.TakeAttendance(DateTime.Now);
                 }
+
                 else if (userInputNumber == 2)
                 {
-                    form.ShowAttendance();
+                    Console.WriteLine("Which student would you like to see the attendance of?");
+                    string studentInput = Console.ReadLine();
+                    int studentNumInput = Convert.ToInt32(studentInput);
+                    form.ShowAttendance(Student[studentNumInput]);
                 }
+
                 else if (userInputNumber == 3)
                 {
+                    Console.WriteLine("What is the name of the student?");
+                    string InputName = Console.ReadLine();
 
-                    form.AddStudent();
+                    Console.WriteLine("When were they born? (mm/dd/yy)");
+                    string InputDoB = Console.ReadLine();
+                    DateTime DoBInput = Convert.ToDateTime(InputDoB);
+
+                    Console.WriteLine("What is their gender? (1 character)");
+                    string InputGender = Console.ReadLine();
+                    char GenderInput = Convert.ToChar(InputGender);
+
+                    form.AddStudent(InputName, DoBInput, GenderInput);
                 }
+
+
             }
         }
     }
